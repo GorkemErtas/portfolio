@@ -169,3 +169,18 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 .deviceWindow img{display:block;width:100%;height:calc(100% - 27px);object-fit:contain!important;object-position:center center!important;background:#050608}
 @media(max-width:900px){.deviceWindow{width:min(100%,520px);height:260px}}
 @media(max-width:700px){.deviceWindow{width:100%;max-width:none;height:300px;justify-self:stretch}.deviceWindow img{height:calc(100% - 27px)}}
+
+/* Projects: unified outer width and visual rhythm */
+#projects.section>*{max-width:1160px}
+#projects .sectionHead{margin-bottom:46px}
+#projects .projectShowcase,#projects .projectCard{width:100%;max-width:1160px;margin-left:auto!important;margin-right:auto!important}
+#projects .projectShowcase{margin-bottom:18px!important}
+#projects .projectCard{padding:42px;gap:42px}
+#projects .projectSecondary{margin-top:18px!important}
+#projects .projectInfo h3{font-size:46px}
+#projects .architecture{padding:30px 24px}
+.eksperShowcase{max-width:1160px!important;width:100%}
+.showcaseStage{grid-template-columns:minmax(260px,.8fr) minmax(400px,1.2fr);padding:26px 30px 22px;gap:34px}
+.deviceWindow{width:100%;max-width:560px;height:275px}
+@media(max-width:1000px){#projects.section>*{max-width:100%}#projects .projectCard{padding:34px;gap:34px}.showcaseStage{grid-template-columns:.8fr 1.2fr}}
+@media(max-width:700px){#projects .projectCard{padding:26px;gap:28px}#projects .projectInfo h3{font-size:38px}.showcaseStage{grid-template-columns:1fr;padding:20px 16px 16px}.deviceWindow{max-width:100%;height:300px}}
