@@ -205,3 +205,21 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 .embeddedArchitecture .archTitle{margin-bottom:18px}.embeddedArchitecture .archRow{margin-top:0;gap:9px}.embeddedArchitecture .archRow>div{padding:14px 10px;min-height:88px;font-size:9px}.embeddedArchitecture .archRow>div svg{width:20px;height:20px}.embeddedArchitecture .archRow small{font-size:8px}.embeddedArchitecture .archServices{margin-top:14px;gap:7px}.embeddedArchitecture .archServices>div{padding:11px 9px;min-height:80px;font-size:9px}.embeddedArchitecture .archServices svg{width:20px;height:20px}.embeddedArchitecture .archServices small{font-size:8px}.embeddedArchitecture .pipeline{margin-top:13px;padding-top:12px}.embeddedArchitecture .pipeline strong,.embeddedArchitecture .pipeline span{font-size:8px}
 @media(max-width:1000px){.projectSidePanel{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:28px}.sidePanelBody{min-height:390px}.miniShowcase,.embeddedArchitecture{height:390px}.miniDevice{height:305px}}
 @media(max-width:700px){#projects .projectCard{padding:24px}.miniShowcase{height:auto;min-height:440px;grid-template-columns:1fr;grid-template-rows:auto 290px 40px}.miniDevice{height:290px}.miniNav{grid-column:1}.sidePanelBody{min-height:440px}.embeddedArchitecture{height:auto;min-height:440px}.projectSidePanel{padding-top:22px}}
+
+/* Wider desktop canvas: reduce side gutters without changing row structure */
+@media(min-width:1101px){
+ .nav,.hero,footer{max-width:1540px;padding-left:32px;padding-right:32px}
+ .section{padding-left:max(32px,calc((100vw - 1480px)/2));padding-right:max(32px,calc((100vw - 1480px)/2))}
+ .section>*{max-width:1480px}
+ #projects.section>*{max-width:1480px}
+ #projects .projectShowcase,#projects .projectCard{max-width:1480px}
+ .contactSection{padding-left:max(32px,calc((100vw - 1480px)/2));padding-right:max(32px,calc((100vw - 1480px)/2))}
+ .sectionHead{grid-template-columns:minmax(0,2.15fr) minmax(300px,.85fr);gap:72px}
+ .aboutGrid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:72px}
+ #projects .projectCard{grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:34px}
+ .projectSidePanel{padding-left:28px}
+}
+@media(min-width:1500px){
+ .section{padding-left:42px;padding-right:42px}
+ .contactSection{padding-left:42px;padding-right:42px}
+}
