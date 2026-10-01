@@ -48,3 +48,7 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 @media(max-width:1100px){.stackGrid{grid-template-columns:repeat(3,minmax(0,1fr))}.stackGroup:nth-child(3){border-right:0}}
 @media(max-width:800px){.contactSection{grid-template-columns:1fr;gap:45px;padding:80px 32px}.stackGrid{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){.contactSection{padding:75px 22px}.stackGrid{grid-template-columns:1fr}.contactSection h2{font-size:48px}}
+
+.contactLinks a>span{display:flex;flex-direction:column;gap:5px}
+.contactLinks a>span strong{font:inherit;font-weight:400}
+.contactLinks a>span small{font:9px 'DM Mono';color:#69717b;text-transform:none;letter-spacing:0}
