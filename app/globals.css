@@ -141,3 +141,19 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 .showcaseNav button{appearance:none;border:0;border-right:1px solid var(--line);background:transparent;color:#707984;text-align:left;padding:14px 16px;cursor:pointer;display:flex;flex-direction:column;gap:6px;transition:.2s}.showcaseNav button:last-child{border-right:0}.showcaseNav button span{font:8px 'DM Mono';color:#515963}.showcaseNav button b{font:500 8px 'DM Mono';letter-spacing:.09em}.showcaseNav button:hover{background:rgba(255,255,255,.018);color:#cbd1d7}.showcaseNav button.active{background:rgba(139,92,246,.07);color:#c4b5fd;box-shadow:inset 0 2px 0 #8b5cf6}.showcaseNav button.active span{color:#8b5cf6}
 @media(max-width:900px){.showcaseStage{grid-template-columns:.8fr 1.2fr;gap:25px;padding:28px 25px 20px}.deviceWindow{height:245px}.showcaseBrand{padding:0 18px}}
 @media(max-width:700px){.eksperShowcase{min-height:0}.showcaseBrand{height:56px}.showcaseBrand small{display:none}.showcaseStage{grid-template-columns:1fr;padding:25px 18px 18px;gap:22px}.showcaseCopy{max-width:none}.showcaseCopy h3{font-size:28px}.deviceWindow{width:100%;height:260px;justify-self:stretch}.showcaseNav{display:flex;overflow-x:auto;scrollbar-width:none}.showcaseNav::-webkit-scrollbar{display:none}.showcaseNav button{flex:0 0 145px;padding:13px}.showcaseNav button b{white-space:nowrap}}
+
+/* Refined showcase proportions */
+.eksperShowcase{max-width:1100px!important;margin-left:auto!important;margin-right:auto!important;border-radius:12px;min-height:0}
+.showcaseBrand{height:52px;padding:0 18px}
+.showcaseStage{grid-template-columns:minmax(220px,.78fr) minmax(320px,1.22fr);min-height:0;padding:24px 28px 20px;gap:30px}
+.showcaseCopy{max-width:330px}
+.showcaseCopy h3{font-size:clamp(24px,2.2vw,34px);line-height:1.08;margin:12px 0}
+.showcaseCopy p{font-size:12px;line-height:1.65}
+.deviceWindow{width:min(100%,460px);height:230px;border-radius:11px}
+.deviceTop{height:27px}
+.deviceWindow img{height:calc(100% - 27px);object-fit:cover;object-position:top center}
+.showcaseNav{grid-template-columns:repeat(4,minmax(0,1fr))}
+.showcaseNav button{min-width:0;padding:11px 13px;gap:4px}
+.showcaseNav button b{font-size:7px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media(max-width:900px){.eksperShowcase{max-width:100%!important}.showcaseStage{grid-template-columns:1fr 1.15fr;padding:22px}.deviceWindow{height:220px}}
+@media(max-width:700px){.showcaseStage{grid-template-columns:1fr;padding:20px 16px 16px}.showcaseCopy h3{font-size:25px}.showcaseCopy p{font-size:12px}.deviceWindow{height:240px}.showcaseNav button{flex-basis:125px}.showcaseBrand em{font-size:8px}}
