@@ -157,3 +157,9 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 .showcaseNav button b{font-size:7px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 @media(max-width:900px){.eksperShowcase{max-width:100%!important}.showcaseStage{grid-template-columns:1fr 1.15fr;padding:22px}.deviceWindow{height:220px}}
 @media(max-width:700px){.showcaseStage{grid-template-columns:1fr;padding:20px 16px 16px}.showcaseCopy h3{font-size:25px}.showcaseCopy p{font-size:12px}.deviceWindow{height:240px}.showcaseNav button{flex-basis:125px}.showcaseBrand em{font-size:8px}}
+
+/* Show full portrait app screenshots without cropping */
+.deviceWindow{width:min(100%,430px);height:300px;background:#08090d}
+.deviceWindow img{width:100%;height:calc(100% - 27px);object-fit:contain!important;object-position:center top!important;background:#08090d}
+@media(max-width:900px){.deviceWindow{height:285px}}
+@media(max-width:700px){.deviceWindow{height:360px;max-width:330px;justify-self:center}.deviceWindow img{object-fit:contain!important}}
