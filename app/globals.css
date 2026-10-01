@@ -104,3 +104,13 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 .projectInfo,.architecture{box-sizing:border-box}
 .focusCard,.stackGroup,.timelineItem{box-sizing:border-box}
 @media(max-width:700px){.projectLinks{grid-template-columns:1fr;max-width:100%}.projectLinks .repoLink,.projectLinks .storeBadge{height:62px}}
+
+/* Shared project action system */
+.projectInfo>.repoLink{margin-top:28px!important}
+.projectLinks.singleAction{grid-template-columns:minmax(0,1fr) minmax(0,1fr);max-width:440px}
+.projectLinks.singleAction .repoLink{grid-column:1}
+.projectSecondary .projectInfo{display:flex;flex-direction:column}
+.projectSecondary .projectLinks{margin-top:auto;padding-top:28px}
+.eksperCard .projectInfo{display:flex;flex-direction:column}
+.eksperCard .projectLinks{margin-top:auto;padding-top:28px}
+@media(max-width:700px){.projectLinks.singleAction{grid-template-columns:1fr}.projectSecondary .projectLinks,.eksperCard .projectLinks{padding-top:23px}}
