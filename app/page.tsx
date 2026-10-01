@@ -9,7 +9,7 @@ const techGroups = [
   { title:"AI / ML", items:["Python","YOLO","Computer Vision","AI APIs"] },
   { title:"Mobile / Frontend", items:["Flutter","React Native","TypeScript","JavaScript","HTML","CSS"] },
   { title:"Data & Infrastructure", items:["PostgreSQL","MongoDB","MySQL","Docker","Firebase","Railway"] },
-  { title:"Development Tools", items:["Git","GitHub","Postman","Jira","Confluence"] },
+  { title:"Development Tools", items:["Git","GitHub","Postman","Jira","Confluence","Claude","Codex"] },
 ];
 
 const copy = {
