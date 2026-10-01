@@ -1,86 +1,47 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowDown, ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Github, Linkedin, Mail, Server, BrainCircuit, PanelsTopLeft, Database, Container, Smartphone, Code2 } from "lucide-react";
 import { motion } from "framer-motion";
 
+const techGroups = [
+  { title:"Backend", items:["Java","Spring Boot","Node.js","FastAPI","REST APIs"] },
+  { title:"AI / ML", items:["Python","YOLO","Computer Vision","AI APIs"] },
+  { title:"Mobile / Frontend", items:["Flutter","React Native","TypeScript","JavaScript","HTML","CSS"] },
+  { title:"Data & Infrastructure", items:["PostgreSQL","MongoDB","MySQL","Docker","Firebase","Git","GitHub","Postman"] },
+];
+
 const copy = {
-  en: {
-    nav: ["Work", "About", "Stack", "Experience"],
-    role: "Software Engineer",
-    focus: "AI / ML  ·  BACKEND  ·  FULL-STACK",
-    intro: "I build production-oriented applications with a focus on backend engineering, AI/ML integration and end-to-end product development.",
-    work: "Explore my work",
-    contact: "Contact",
-    status: "OPEN TO SOFTWARE ENGINEERING ROLES",
-    location: "İzmir, Türkiye · Open to relocation",
-    scroll: "SCROLL TO EXPLORE",
-    selected: "SELECTED WORK",
-    statement: "Building intelligent systems from backend to interface.",
-  },
-  tr: {
-    nav: ["Projeler", "Hakkımda", "Teknolojiler", "Deneyim"],
-    role: "Yazılım Mühendisi",
-    focus: "AI / ML  ·  BACKEND  ·  FULL-STACK",
-    intro: "Backend mühendisliği, AI/ML entegrasyonu ve uçtan uca ürün geliştirmeye odaklanan uygulamalar geliştiriyorum.",
-    work: "Projelerimi incele",
-    contact: "İletişim",
-    status: "YAZILIM MÜHENDİSLİĞİ FIRSATLARINA AÇIK",
-    location: "İzmir, Türkiye · Taşınmaya açık",
-    scroll: "KEŞFETMEK İÇİN KAYDIR",
-    selected: "SEÇİLİ PROJELER",
-    statement: "Backend'den arayüze akıllı sistemler geliştiriyorum.",
-  },
+ en:{nav:["Work","About","Stack","Experience"],role:"Software Engineer",focus:"AI / ML  ·  BACKEND  ·  FULL-STACK",intro:"I build production-oriented applications with a focus on backend engineering, AI/ML integration and end-to-end product development.",work:"Explore my work",contact:"Contact",status:"OPEN TO SOFTWARE ENGINEERING ROLES",location:"İzmir, Türkiye · Open to relocation",scroll:"SCROLL TO EXPLORE",about:"ABOUT / FOCUS",aboutTitle:"I like building the part behind the interface.",aboutText:"Software Engineer focused on backend-heavy full-stack development, AI/ML integration and production-oriented applications.",stack:"TECHNOLOGY STACK",stackTitle:"Tools I use to turn ideas into working systems.",exp:"EXPERIENCE / EDUCATION"},
+ tr:{nav:["Projeler","Hakkımda","Teknolojiler","Deneyim"],role:"Yazılım Mühendisi",focus:"AI / ML  ·  BACKEND  ·  FULL-STACK",intro:"Backend mühendisliği, AI/ML entegrasyonu ve uçtan uca ürün geliştirmeye odaklanan uygulamalar geliştiriyorum.",work:"Projelerimi incele",contact:"İletişim",status:"YAZILIM MÜHENDİSLİĞİ FIRSATLARINA AÇIK",location:"İzmir, Türkiye · Taşınmaya açık",scroll:"KEŞFETMEK İÇİN KAYDIR",about:"HAKKIMDA / ODAK",aboutTitle:"Arayüzün arkasındaki sistemi geliştirmeyi seviyorum.",aboutText:"Backend ağırlıklı full-stack geliştirme, AI/ML entegrasyonu ve üretime yönelik uygulamalara odaklanan bir Yazılım Mühendisiyim.",stack:"TEKNOLOJİLER",stackTitle:"Fikirleri çalışan sistemlere dönüştürürken kullandığım teknolojiler.",exp:"DENEYİM / EĞİTİM"}
 };
 
-export default function Home() {
-  const [lang, setLang] = useState<"en" | "tr">("en");
-  const t = copy[lang];
-  const anchors = ["#work", "#about", "#stack", "#experience"];
+const focusCards=[
+ {icon:Server,title:"Backend Engineering",text:"REST APIs · Authentication · Databases · System Architecture · Docker"},
+ {icon:BrainCircuit,title:"AI / ML",text:"Computer Vision · YOLO · AI integrations · Model APIs · Python / FastAPI"},
+ {icon:PanelsTopLeft,title:"Product Development",text:"Flutter · React Native · Full-stack systems · Mobile apps · Deployment"}
+];
 
-  return (
-    <main className="shell">
-      <div className="ambient" />
-      <nav className="nav">
-        <a className="mark" href="#top">GE<span>.</span></a>
-        <div className="navLinks">{t.nav.map((item, i) => <a href={anchors[i]} key={item}>{item}</a>)}</div>
-        <div className="navRight">
-          <a aria-label="GitHub" href="https://github.com/GorkemErtas" target="_blank" rel="noreferrer"><Github size={18}/></a>
-          <a aria-label="LinkedIn" href="https://www.linkedin.com/in/gorkem-ertas/" target="_blank" rel="noreferrer"><Linkedin size={18}/></a>
-          <button className="lang" onClick={() => setLang(lang === "en" ? "tr" : "en")}><b>{lang.toUpperCase()}</b><span>/</span>{lang === "en" ? "TR" : "EN"}</button>
-        </div>
-      </nav>
+export default function Home(){
+ const [lang,setLang]=useState<"en"|"tr">("en"); const t=copy[lang]; const anchors=["#work","#about","#stack","#experience"];
+ return <main className="shell">
+  <div className="ambient"/>
+  <nav className="nav"><a className="mark" href="#top">GE<span>.</span></a><div className="navLinks">{t.nav.map((x,i)=><a href={anchors[i]} key={x}>{x}</a>)}</div><div className="navRight"><a aria-label="GitHub" href="https://github.com/GorkemErtas" target="_blank"><Github size={18}/></a><a aria-label="LinkedIn" href="https://www.linkedin.com/in/gorkem-ertas/" target="_blank"><Linkedin size={18}/></a><button className="lang" onClick={()=>setLang(lang==="en"?"tr":"en")}><b>{lang.toUpperCase()}</b><span>/</span>{lang==="en"?"TR":"EN"}</button></div></nav>
+  <section id="top" className="hero">
+   <motion.div className="heroCopy" initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{duration:.7}}><div className="eyebrow"><span>01</span>{t.role}</div><h1><span>GÖRKEM</span><span className="outline">ERTAŞ</span></h1><div className="focus">{t.focus}</div><p className="intro">{t.intro}</p><div className="actions"><a className="primary" href="#work">{t.work}<ArrowDown size={17}/></a><a className="secondary" href="mailto:gorkemertas2002@hotmail.com">{t.contact}<Mail size={17}/></a></div></motion.div>
+   <motion.div className="system" initial={{opacity:0,scale:.94}} animate={{opacity:1,scale:1}} transition={{duration:1,delay:.2}}><div className="orbit orbit1"/><div className="orbit orbit2"/><div className="line l1"/><div className="line l2"/><div className="line l3"/>{["AI / ML","FastAPI","BACKEND","Spring Boot","PostgreSQL","Docker","MOBILE","Flutter","React Native","Node.js"].map((n,i)=><div key={n} className={"node n"+i}><i/>{n}</div>)}<div className="core"><span>GE</span><small>ENGINEERING</small></div></motion.div>
+   <div className="availability"><i/><div><strong>{t.status}</strong><span>{t.location}</span></div></div><a className="scroll" href="#work">{t.scroll}<ArrowDown size={15}/></a>
+  </section>
 
-      <section id="top" className="hero">
-        <motion.div className="heroCopy" initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{duration:.7}}>
-          <div className="eyebrow"><span>01</span>{t.role}</div>
-          <h1><span>GÖRKEM</span><span className="outline">ERTAŞ</span></h1>
-          <div className="focus">{t.focus}</div>
-          <p className="intro">{t.intro}</p>
-          <div className="actions">
-            <a className="primary" href="#work">{t.work}<ArrowDown size={17}/></a>
-            <a className="secondary" href="mailto:gorkemertas2002@hotmail.com">{t.contact}<Mail size={17}/></a>
-          </div>
-        </motion.div>
+  <section id="work" className="section work"><div className="sectionLabel"><span>02</span>SELECTED WORK</div><div className="sectionHead"><h2>Building intelligent systems<br/>from backend to interface.</h2><p>Selected projects where I designed and connected the backend, data, AI and mobile layers.</p></div>
+   <article className="projectCard"><div className="projectInfo"><span className="projectType">PERSONAL PROJECT · FEATURED</span><h3>EksperSiz</h3><p>AI-assisted vehicle damage analysis platform combining a Flutter mobile experience with backend services and computer vision.</p><div className="tags">{["Flutter","Spring Boot","FastAPI","Python","PostgreSQL","YOLO","Docker","Firebase","RevenueCat"].map(x=><span key={x}>{x}</span>)}</div><a href="https://github.com/GorkemErtas/ekspersiz" target="_blank">View repository <ArrowUpRight size={16}/></a></div><div className="architecture"><div className="archTitle">SYSTEM FLOW</div><div className="archRow"><div><Smartphone/>Flutter<small>Mobile App</small></div><b>→</b><div><Server/>Spring Boot<small>API & Logic</small></div><b>→</b><div><Database/>PostgreSQL<small>Data</small></div></div><div className="archBranch">↘ <div><BrainCircuit/>FastAPI + YOLO<small>AI Analysis</small></div></div></div></article>
+  </section>
 
-        <motion.div className="system" initial={{opacity:0,scale:.94}} animate={{opacity:1,scale:1}} transition={{duration:1,delay:.2}}>
-          <div className="orbit orbit1"/><div className="orbit orbit2"/>
-          <div className="line l1"/><div className="line l2"/><div className="line l3"/>
-          {["AI / ML","FastAPI","BACKEND","Spring Boot","PostgreSQL","MOBILE","Flutter"].map((node,i) =>
-            <div key={node} className={"node n"+i}><i/>{node}</div>
-          )}
-          <div className="core"><span>GE</span><small>ENGINEERING</small></div>
-        </motion.div>
+  <section id="about" className="section"><div className="sectionLabel"><span>03</span>{t.about}</div><div className="aboutGrid"><div><h2>{t.aboutTitle}</h2><p className="lead">{t.aboutText}</p></div><div className="focusGrid">{focusCards.map(({icon:Icon,title,text},i)=><motion.div className="focusCard" key={title} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*.08}}><Icon size={23}/><span>0{i+1}</span><h3>{title}</h3><p>{text}</p></motion.div>)}</div></div></section>
 
-        <div className="availability"><i/><div><strong>{t.status}</strong><span>{t.location}</span></div></div>
-        <a className="scroll" href="#work">{t.scroll}<ArrowDown size={15}/></a>
-      </section>
+  <section id="stack" className="section stackSection"><div className="sectionLabel"><span>04</span>{t.stack}</div><div className="sectionHead"><h2>{t.stackTitle}</h2></div><div className="stackGrid">{techGroups.map((g,i)=><div className="stackGroup" key={g.title}><span>0{i+1}</span><h3>{g.title}</h3><div>{g.items.map(x=><em key={x}>{x}</em>)}</div></div>)}</div><div className="stackNote"><Code2 size={17}/> No arbitrary skill percentages — technologies are grouped by where I use them.</div></section>
 
-      <section id="work" className="placeholder">
-        <span>02 / {t.selected}</span>
-        <h2>{t.statement}</h2>
-        <a href="https://github.com/GorkemErtas/ekspersiz" target="_blank" rel="noreferrer">EksperSiz <ArrowUpRight size={18}/></a>
-      </section>
-    </main>
-  );
+  <section id="experience" className="section experience"><div className="sectionLabel"><span>05</span>{t.exp}</div><div className="timeline"><div className="timelineItem"><span>2024</span><div><h3>IT Intern · GDZ Elektrik Dağıtım A.Ş.</h3><p>IT support analysis, operations and documentation; exposure to corporate infrastructure and software processes.</p></div></div><div className="timelineItem"><span>2020 — 2025</span><div><h3>B.Sc. Software Engineering · Yaşar University</h3><p>Full scholarship.</p></div></div></div></section>
+  <footer><span>GÖRKEM ERTAŞ · SOFTWARE ENGINEER</span><a href="mailto:gorkemertas2002@hotmail.com">gorkemertas2002@hotmail.com <ArrowUpRight size={14}/></a></footer>
+ </main>
 }
