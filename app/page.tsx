@@ -26,6 +26,7 @@ const focusCards=[
 const eksperSlides = [
  { image:"https://raw.githubusercontent.com/GorkemErtas/ekspersiz/master/docs/screenshots/home.jpeg", eyebrow:"AI VEHICLE ASSISTANT", title:"Everything starts from one dashboard.", text:"Start a damage analysis, follow your vehicle and reach maintenance information from a single place." },
  { image:"https://raw.githubusercontent.com/GorkemErtas/ekspersiz/master/docs/screenshots/tracking.jpeg", eyebrow:"VEHICLE TRACKING", title:"Maintenance and reminders, kept together.", text:"Track maintenance history, upcoming reminders and the vehicle's latest visible-damage status." },
+ { image:"https://raw.githubusercontent.com/GorkemErtas/ekspersiz/master/docs/screenshots/analyses.jpeg", eyebrow:"ANALYSIS HISTORY", title:"Completed inspections, always within reach.", text:"Review previous vehicle damage analyses and open their AI-generated reports from one organized history." },
  { image:"https://raw.githubusercontent.com/GorkemErtas/ekspersiz/master/docs/screenshots/ai-analysis.jpeg", eyebrow:"COMPUTER VISION", title:"Turn a vehicle photo into structured damage insight.", text:"The analysis flow detects visible damage and surfaces severity, affected areas and model confidence." },
  { image:"https://raw.githubusercontent.com/GorkemErtas/ekspersiz/master/docs/screenshots/report.jpeg", eyebrow:"AI REPORTING", title:"From detection to an actionable inspection report.", text:"AI-assisted reports summarize damage, repair recommendations and estimated repair-cost context." },
 ];
