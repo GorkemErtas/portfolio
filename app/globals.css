@@ -90,3 +90,17 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 .storeBadge small{font:8px 'DM Mono';letter-spacing:.16em;color:#606a75}
 .storeBadge strong{font:11px 'DM Mono';font-weight:500;color:#9ca4ac}
 @media(max-width:700px){.projectLinks{margin-top:23px}}
+
+/* Consistent action sizing and card rhythm */
+.projectLinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;max-width:440px;gap:10px;align-items:stretch}
+.projectLinks .repoLink,.projectLinks .storeBadge{width:100%;height:62px;min-height:62px;box-sizing:border-box;margin:0!important}
+.projectLinks .repoLink{grid-template-columns:38px minmax(0,1fr) 20px}
+.projectLinks .storeBadge{grid-template-columns:38px minmax(0,1fr) 20px;padding-right:12px}
+.projectLinks .storeBadge:after{content:"";width:20px;height:1px}
+.projectLinks .repoIcon,.projectLinks .playIcon{width:38px;height:38px;box-sizing:border-box}
+.projectLinks .repoLink>span:nth-child(2),.projectLinks .storeBadge>span:nth-child(2){min-width:0}
+.projectLinks .repoLink strong,.projectLinks .storeBadge strong{white-space:nowrap}
+.projectCard{align-items:stretch}
+.projectInfo,.architecture{box-sizing:border-box}
+.focusCard,.stackGroup,.timelineItem{box-sizing:border-box}
+@media(max-width:700px){.projectLinks{grid-template-columns:1fr;max-width:100%}.projectLinks .repoLink,.projectLinks .storeBadge{height:62px}}
