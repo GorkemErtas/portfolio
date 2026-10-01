@@ -2,7 +2,7 @@
 
 import { ArrowDown, ArrowUpRight, Github, Linkedin, Mail, Server, BrainCircuit, PanelsTopLeft, Database, Smartphone, Code2 } from "lucide-react";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const techGroups = [
   { title:"Backend", items:["Java","Spring Boot","Node.js","FastAPI","REST APIs"] },
@@ -32,7 +32,6 @@ const eksperSlides = [
 
 function EksperShowcase(){
  const [active,setActive]=useState(0);
- useEffect(()=>{const id=setInterval(()=>setActive(v=>(v+1)%eksperSlides.length),5200);return()=>clearInterval(id)},[]);
  const slide=eksperSlides[active];
  return <motion.div className="projectShowcase eksperShowcase" initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:.2}} transition={{duration:.55}}>
   <div className="showcaseBrand"><div><span>EKSPERSİZ</span><small>AI-POWERED VEHICLE ASSISTANT</small></div><em>{String(active+1).padStart(2,"0")} / {String(eksperSlides.length).padStart(2,"0")}</em></div>
