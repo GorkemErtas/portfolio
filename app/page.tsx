@@ -8,7 +8,8 @@ const techGroups = [
   { title:"Backend", items:["Java","Spring Boot","Node.js","FastAPI","REST APIs"] },
   { title:"AI / ML", items:["Python","YOLO","Computer Vision","AI APIs"] },
   { title:"Mobile / Frontend", items:["Flutter","React Native","TypeScript","JavaScript","HTML","CSS"] },
-  { title:"Data & Infrastructure", items:["PostgreSQL","MongoDB","MySQL","Docker","Firebase","Git","GitHub","Postman"] },
+  { title:"Data & Infrastructure", items:["PostgreSQL","MongoDB","MySQL","Docker","Firebase","Railway"] },
+  { title:"Development Tools", items:["Git","GitHub","Postman","Jira","Confluence"] },
 ];
 
 const copy = {
@@ -43,6 +44,6 @@ export default function Home(){
   <section id="stack" className="section stackSection"><div className="sectionLabel"><span>04</span>{t.stack}</div><div className="sectionHead"><h2>{t.stackTitle}</h2></div><div className="stackGrid">{techGroups.map((g,i)=><div className="stackGroup" key={g.title}><span>0{i+1}</span><h3>{g.title}</h3><div>{g.items.map(x=><em key={x}>{x}</em>)}</div></div>)}</div><div className="stackNote"><Code2 size={17}/> No arbitrary skill percentages — technologies are grouped by where I use them.</div></section>
 
   <section id="experience" className="section experience"><div className="sectionLabel"><span>05</span>{t.exp}</div><div className="timeline"><div className="timelineItem"><span>2024</span><div><h3>IT Intern · GDZ Elektrik Dağıtım A.Ş.</h3><p>IT support analysis, operations and documentation; exposure to corporate infrastructure and software processes.</p></div></div><div className="timelineItem"><span>2020 — 2025</span><div><h3>B.Sc. Software Engineering · Yaşar University</h3><p>Full scholarship.</p></div></div></div></section>
-  <footer><span>GÖRKEM ERTAŞ · SOFTWARE ENGINEER</span><a href="mailto:gorkemertas2002@hotmail.com">gorkemertas2002@hotmail.com <ArrowUpRight size={14}/></a></footer>
+  <section id="contact" className="contactSection"><div><span className="contactKicker">06 / CONTACT</span><h2>Let&apos;s build what&apos;s next.</h2><p>I&apos;m open to Software Engineering opportunities where I can contribute across backend, AI/ML and full-stack product development.</p></div><div className="contactLinks"><a href="mailto:gorkemertas2002@hotmail.com"><Mail size={18}/>Email<ArrowUpRight size={15}/></a><a href="https://www.linkedin.com/in/gorkem-ertas/" target="_blank"><Linkedin size={18}/>LinkedIn<ArrowUpRight size={15}/></a><a href="https://github.com/GorkemErtas" target="_blank"><Github size={18}/>GitHub<ArrowUpRight size={15}/></a></div></section><footer><span>GÖRKEM ERTAŞ · SOFTWARE ENGINEER</span><span>İZMİR, TÜRKİYE · OPEN TO RELOCATION</span></footer>
  </main>
 }
