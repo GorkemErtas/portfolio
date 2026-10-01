@@ -163,3 +163,9 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 .deviceWindow img{width:100%;height:calc(100% - 27px);object-fit:contain!important;object-position:center top!important;background:#08090d}
 @media(max-width:900px){.deviceWindow{height:285px}}
 @media(max-width:700px){.deviceWindow{height:360px;max-width:330px;justify-self:center}.deviceWindow img{object-fit:contain!important}}
+
+/* Screenshot viewport: restore wide frame, fit portrait screen edge-to-edge vertically */
+.deviceWindow{width:min(100%,560px);height:275px;justify-self:end;background:#050608}
+.deviceWindow img{display:block;width:100%;height:calc(100% - 27px);object-fit:contain!important;object-position:center center!important;background:#050608}
+@media(max-width:900px){.deviceWindow{width:min(100%,520px);height:260px}}
+@media(max-width:700px){.deviceWindow{width:100%;max-width:none;height:300px;justify-self:stretch}.deviceWindow img{height:calc(100% - 27px)}}
