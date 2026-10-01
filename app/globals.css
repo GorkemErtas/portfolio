@@ -36,3 +36,15 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 .pipeline span{font:9px/1.65 'DM Mono';color:#777f89}
 @media(max-width:1150px){.eksperCard .archRow{flex-wrap:wrap}.eksperCard .archRow>div{flex:1}.archServices{grid-template-columns:1fr}}
 @media(max-width:700px){.projectHighlights{grid-template-columns:1fr}.archServices{grid-template-columns:1fr}.pipeline span{overflow-wrap:anywhere}}
+
+.stackGrid{grid-template-columns:repeat(5,minmax(0,1fr))}
+.contactSection{width:100%;padding:110px max(48px,calc((100vw - 1284px)/2));border-top:1px solid var(--line);background:#080a0d;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(280px,.7fr);gap:90px;align-items:end}
+.contactKicker{font:10px 'DM Mono';letter-spacing:.18em;color:var(--accent)}
+.contactSection h2{font-size:clamp(48px,6vw,88px);letter-spacing:-.06em;line-height:.95;margin:25px 0}
+.contactSection p{max-width:680px;color:var(--muted);font-size:16px;line-height:1.75}
+.contactLinks{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.contactLinks a{display:grid;grid-template-columns:24px 1fr auto;align-items:center;gap:14px;padding:20px 4px;border-bottom:1px solid var(--line);color:#dfe3e7;text-decoration:none;font:11px 'DM Mono';transition:.2s}
+.contactLinks a:hover{color:var(--accent);padding-left:10px}
+@media(max-width:1100px){.stackGrid{grid-template-columns:repeat(3,minmax(0,1fr))}.stackGroup:nth-child(3){border-right:0}}
+@media(max-width:800px){.contactSection{grid-template-columns:1fr;gap:45px;padding:80px 32px}.stackGrid{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.contactSection{padding:75px 22px}.stackGrid{grid-template-columns:1fr}.contactSection h2{font-size:48px}}
