@@ -71,3 +71,13 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 .archBranch>div{font-size:11px;padding:18px 14px}
 .archBranch small{font-size:10px;line-height:1.5}
 @media(max-width:700px){.architecture{padding:28px 20px}.archRow>div{min-height:105px}.archTitle{font-size:10px}.pipeline span{font-size:9.5px}}
+
+.repoLink{width:max-content;max-width:100%;margin-top:28px!important;display:grid!important;grid-template-columns:38px auto 20px;align-items:center;gap:11px;padding:9px 12px 9px 9px!important;border:1px solid var(--line);text-decoration:none!important;color:var(--fg)!important;background:rgba(255,255,255,.015);transition:border-color .2s,background .2s,transform .2s}
+.repoLink:hover{border-color:rgba(103,232,249,.42);background:rgba(103,232,249,.045);transform:translateY(-2px)}
+.repoIcon{width:38px;height:38px;display:grid;place-items:center;border:1px solid rgba(103,232,249,.2);background:rgba(103,232,249,.055);color:var(--accent)}
+.repoLink>span:nth-child(2){display:flex;flex-direction:column;gap:3px;min-width:92px}
+.repoLink small{font:8px 'DM Mono';letter-spacing:.16em;color:#66717d}
+.repoLink strong{font:11px 'DM Mono';font-weight:500;letter-spacing:.02em;color:#dce2e7}
+.repoArrow{color:#68727c;transition:transform .2s,color .2s}
+.repoLink:hover .repoArrow{color:var(--accent);transform:translate(2px,-2px)}
+@media(max-width:700px){.repoLink{margin-top:23px!important}}
