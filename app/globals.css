@@ -17,3 +17,10 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 .projectSecondary{margin-top:24px;background:linear-gradient(135deg,rgba(255,255,255,.018),transparent 55%)}
 @media(max-width:1000px){.heroAside{position:absolute;right:25px;top:115px;width:340px;opacity:.2;border-left:0}.heroCopy{max-width:720px}.section{padding-left:32px;padding-right:32px}}
 @media(max-width:700px){.heroAside{display:none}.section{padding-left:22px;padding-right:22px}.sectionHead,.aboutGrid,.projectCard{width:100%}.tags{max-width:100%}}
+
+.contribution{margin:25px 0;padding:18px 20px;border-left:1px solid var(--accent);background:rgba(103,232,249,.025)}
+.contribution strong{font:9px 'DM Mono';letter-spacing:.16em;color:var(--accent)}
+.contribution p{font-size:13px;line-height:1.65;margin:9px 0 0;color:#a1a7af}
+.projectSecondary .archBranch{flex-wrap:wrap}
+.projectSecondary .archBranch>div{flex:1;min-width:140px}
+@media(max-width:700px){.projectSecondary .archBranch>div{width:100%;margin-top:10px}}
