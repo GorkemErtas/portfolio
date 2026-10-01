@@ -223,3 +223,12 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
  .section{padding-left:42px;padding-right:42px}
  .contactSection{padding-left:42px;padding-right:42px}
 }
+
+/* Use available vertical space in app preview; preserve screenshot aspect ratio */
+.sidePanelBody{min-height:500px}
+.miniShowcase{height:500px;grid-template-columns:minmax(160px,.68fr) minmax(250px,1.32fr);grid-template-rows:1fr 40px;padding:20px 22px 14px}
+.miniDevice{height:405px}
+.miniDevice img{height:100%;width:auto;max-width:100%;object-fit:contain}
+.embeddedArchitecture{height:500px}
+@media(max-width:1000px){.sidePanelBody{min-height:470px}.miniShowcase,.embeddedArchitecture{height:470px}.miniDevice{height:375px}}
+@media(max-width:700px){.sidePanelBody{min-height:520px}.miniShowcase{min-height:520px;height:auto;grid-template-rows:auto 350px 40px}.miniDevice{height:350px}.embeddedArchitecture{min-height:520px;height:auto}}
