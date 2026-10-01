@@ -114,3 +114,16 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 .eksperCard .projectInfo{display:flex;flex-direction:column}
 .eksperCard .projectLinks{margin-top:auto;padding-top:28px}
 @media(max-width:700px){.projectLinks.singleAction{grid-template-columns:1fr}.projectSecondary .projectLinks,.eksperCard .projectLinks{padding-top:23px}}
+
+/* Project visual showcase */
+.projectShowcase{margin:0 0 24px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(103,232,249,.035),rgba(255,255,255,.008));overflow:hidden}
+.showcaseHead{height:48px;padding:0 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);font:9px 'DM Mono';letter-spacing:.16em;color:var(--accent)}
+.showcaseHead small{font:8px 'DM Mono';letter-spacing:.15em;color:#59636e}
+.phoneGallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;padding:34px 5.5%;align-items:end}
+.phoneShot{position:relative;min-width:0;border:1px solid #29313a;border-radius:18px;padding:5px;background:#050608;box-shadow:0 20px 45px rgba(0,0,0,.28);transition:transform .25s,border-color .25s}
+.phoneShot:nth-child(2),.phoneShot:nth-child(3){transform:translateY(-10px)}
+.phoneShot:hover{transform:translateY(-8px);border-color:rgba(103,232,249,.42)}
+.phoneShot:nth-child(2):hover,.phoneShot:nth-child(3):hover{transform:translateY(-18px)}
+.phoneShot img{display:block;width:100%;height:auto;border-radius:13px}
+@media(max-width:900px){.phoneGallery{gap:12px;padding:28px 4%}.phoneShot{border-radius:14px}.phoneShot img{border-radius:10px}}
+@media(max-width:700px){.projectShowcase{margin-bottom:18px}.phoneGallery{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:24px 20px 28px}.phoneShot,.phoneShot:nth-child(2),.phoneShot:nth-child(3){flex:0 0 min(66vw,250px);transform:none;scroll-snap-align:center}.phoneShot:hover,.phoneShot:nth-child(2):hover,.phoneShot:nth-child(3):hover{transform:none}.showcaseHead{padding:0 14px}}
