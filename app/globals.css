@@ -52,3 +52,22 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 .contactLinks a>span{display:flex;flex-direction:column;gap:5px}
 .contactLinks a>span strong{font:inherit;font-weight:400}
 .contactLinks a>span small{font:9px 'DM Mono';color:#69717b;text-transform:none;letter-spacing:0}
+
+/* Architecture readability */
+.architecture{padding:36px 30px}
+.archTitle{font-size:11px;letter-spacing:.16em}
+.archRow{margin-top:34px;gap:16px}
+.archRow>div{padding:22px 14px;min-height:118px;font-size:12px}
+.archRow>div svg{width:26px;height:26px}
+.archRow small{font-size:10px;line-height:1.5;margin-top:7px}
+.archRow>b{font-size:18px}
+.archServices{gap:10px;margin-top:26px}
+.archServices>div{padding:18px 14px;min-height:112px;font-size:11px;gap:9px}
+.archServices svg{width:26px;height:26px}
+.archServices small{font-size:10px;line-height:1.5}
+.pipeline{margin-top:22px;padding-top:21px;gap:10px}
+.pipeline strong{font-size:10px}
+.pipeline span{font-size:10px;line-height:1.75}
+.archBranch>div{font-size:11px;padding:18px 14px}
+.archBranch small{font-size:10px;line-height:1.5}
+@media(max-width:700px){.architecture{padding:28px 20px}.archRow>div{min-height:105px}.archTitle{font-size:10px}.pipeline span{font-size:9.5px}}
