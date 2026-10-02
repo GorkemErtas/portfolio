@@ -359,3 +359,19 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
  #projects .miniCopy h4{font-size:22px}
  #projects .miniCopy p{font-size:11px!important}
 }
+
+
+/* Projects readability pass: gently scale up supporting UI text */
+#projects .projectHighlights span{font-size:10.5px!important;line-height:1.45!important}
+#projects .tags span{font-size:10.5px!important;line-height:1.25!important;padding:9px 12px!important}
+#projects .projectMeta{font-size:10px!important}
+#projects .repoLink small,#projects .storeBadge small{font-size:9px!important}
+#projects .repoLink strong,#projects .storeBadge strong{font-size:11.5px!important}
+#projects .contribution strong{font-size:9.5px!important}
+#projects .architecture small{font-size:9px!important;line-height:1.35!important}
+#projects .archTitle,#projects .pipeline strong{font-size:9px!important}
+#projects .pipeline span{font-size:10px!important;line-height:1.45!important}
+@media(max-width:700px){
+ #projects .projectHighlights span,#projects .tags span{font-size:10px!important}
+ #projects .projectMeta{font-size:9px!important}
+}
