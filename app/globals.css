@@ -293,3 +293,11 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 /* Reveal stability: content animates once and stays crisp/visible */
 .contactSection,.contactSection>div{opacity:1!important;transform:none!important;filter:none!important}
 .revealOnView.isVisible{will-change:auto}
+
+
+/* Project metadata: stronger separators + development timeline */
+.projectMeta{display:flex;align-items:center;flex-wrap:wrap;gap:9px 11px;color:var(--accent);font:9px 'DM Mono';letter-spacing:.12em;text-transform:uppercase}
+.projectMeta>span,.projectMeta>time{white-space:nowrap}
+.projectMeta>i{width:3px;height:3px;border-radius:50%;background:#5d6872;box-shadow:0 0 8px rgba(103,232,249,.22);flex:0 0 auto}
+.projectMeta>time{color:#a78bfa;border:1px solid rgba(167,139,250,.22);background:rgba(167,139,250,.045);padding:5px 8px;letter-spacing:.09em}
+@media(max-width:700px){.projectMeta{gap:8px;font-size:8px}.projectMeta>time{padding:4px 7px}}
