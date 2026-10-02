@@ -59,7 +59,15 @@ export default function Home(){
   const root=document.documentElement;
   const move=(e:PointerEvent)=>{root.style.setProperty("--mouse-x",e.clientX+"px");root.style.setProperty("--mouse-y",e.clientY+"px")};
   window.addEventListener("pointermove",move,{passive:true});
-  return()=>window.removeEventListener("pointermove",move);
+
+  const targets=Array.from(document.querySelectorAll(".sectionLabel,.sectionHead,.aboutGrid,.projectCard,.stackGrid,.stackNote,.timelineItem,.contactSection>div"));
+  targets.forEach((el,i)=>{el.classList.add("revealOnView");(el as HTMLElement).style.setProperty("--reveal-delay",String((i%3)*55)+"ms")});
+  const observer=new IntersectionObserver(entries=>{
+   entries.forEach(entry=>entry.target.classList.toggle("isVisible",entry.isIntersecting));
+  },{rootMargin:"-7% 0px -7% 0px",threshold:.08});
+  targets.forEach(el=>observer.observe(el));
+
+  return()=>{window.removeEventListener("pointermove",move);observer.disconnect()};
  },[]);
  return <main className="shell"><div className="cursorGlow" aria-hidden="true"/>
   <div className="ambient"/>
