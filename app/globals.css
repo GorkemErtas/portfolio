@@ -583,3 +583,10 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
  overflow:visible!important;
 }
 .heroPortrait:before{display:none!important}
+
+
+/* Fine-tune hero portrait vertical position */
+.heroPortrait .portraitFrame,
+.heroPortrait .portraitAccent{
+ transform:translateY(-14px)!important;
+}
