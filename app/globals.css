@@ -375,3 +375,19 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
  #projects .projectHighlights span,#projects .tags span{font-size:10px!important}
  #projects .projectMeta{font-size:9px!important}
 }
+
+
+/* Improve contrast of muted project/architecture text */
+#projects .architecture small,
+#projects .archServices small,
+#projects .archBranch small{color:#8f98a3!important;opacity:1!important}
+#projects .archBranch>div,
+#projects .architecture .archRow>div{color:#d7dce2}
+#projects .archTitle{color:#8f98a3!important}
+#projects .contribution p{color:#9ca5af!important}
+#projects .projectInfo>p{color:#aeb6bf!important}
+#projects .miniCopy p{color:#aeb6bf!important}
+#projects .miniNav span{color:#8f98a3!important}
+#projects .sidePanelTabs button:not(.active){color:#858e99!important}
+#projects .tags span{color:#b9c1ca!important}
+#projects .projectHighlights span{color:#aeb7c1!important}
