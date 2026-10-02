@@ -574,3 +574,12 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 .heroPortrait .portraitFrame{width:min(66%,310px)!important}
 @media(max-width:1000px){.heroPortrait{padding:28px!important}.heroPortrait .portraitFrame{width:min(58%,295px)!important}}
 @media(max-width:700px){.heroPortrait{padding:24px!important}.heroPortrait .portraitFrame{width:min(70%,260px)!important}}
+
+
+/* Remove portrait card rectangle */
+.heroPortrait{
+ border:0!important;
+ background:transparent!important;
+ overflow:visible!important;
+}
+.heroPortrait:before{display:none!important}
