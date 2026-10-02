@@ -76,7 +76,7 @@ export default function Home(){
   <nav className="nav"><a className="mark" href="#top">GE<span>.</span></a><div className="navLinks">{t.nav.map((x,i)=><a href={anchors[i]} key={x}>{x}</a>)}</div></nav>
   <section id="top" className="hero">
    <motion.div className="heroCopy" initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{duration:.7}}><div className="eyebrow"><span>01</span>{t.role}</div><h1><span>GÖRKEM</span><span className="outline">ERTAŞ</span></h1><div className="focus">{t.focus}</div><p className="intro">{t.intro}</p><div className="actions"><a className="primary" href="#projects">{t.work}<ArrowDown size={17}/></a><a className="secondary" href="mailto:gorkemertas2002@hotmail.com?subject=Portfolio%20Contact">{t.contact}<Mail size={17}/></a></div></motion.div>
-   <div className="heroPortrait" aria-label="Portrait of Görkem Ertaş"><div className="portraitOrbit" aria-hidden="true"><i/><i/><i/></div><div className="portraitFrame"><img src="/pp/portfolio.jpeg" alt="Görkem Ertaş" /></div><div className="portraitMeta"><span>SOFTWARE ENGINEER</span><strong>GÖRKEM ERTAŞ</strong><small>FULL-STACK · AI / ML · MOBILE</small></div></div>
+   <div className="heroPortrait"><div className="portraitFrame"><img src="https://raw.githubusercontent.com/GorkemErtas/portfolio/main/pp/portfolio.jpeg" alt="Görkem Ertaş" /></div><div className="portraitAccent" aria-hidden="true"/><div className="portraitMeta"><span>SOFTWARE ENGINEER</span><strong>GÖRKEM ERTAŞ</strong><small>FULL-STACK · AI / ML · MOBILE</small></div></div>
    <div className="availability"><i/><div><strong>{t.status}</strong><span>{t.location}</span></div></div><a className="scroll" href="#about">{t.scroll}<ArrowDown size={15}/></a>
   </section>
 
