@@ -567,3 +567,10 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 .heroPortrait .portraitMeta{left:34px!important;right:34px!important;bottom:24px!important}
 @media(max-width:1000px){.heroPortrait{min-height:430px!important;padding-bottom:82px!important}.heroPortrait .portraitFrame{width:min(55%,280px)!important}}
 @media(max-width:700px){.heroPortrait{min-height:400px!important;padding:26px 22px 92px!important}.heroPortrait .portraitFrame{width:min(68%,250px)!important}.heroPortrait .portraitMeta{left:22px!important;right:22px!important}}
+
+
+/* Simplified portrait card */
+.heroPortrait{padding:30px!important}
+.heroPortrait .portraitFrame{width:min(66%,310px)!important}
+@media(max-width:1000px){.heroPortrait{padding:28px!important}.heroPortrait .portraitFrame{width:min(58%,295px)!important}}
+@media(max-width:700px){.heroPortrait{padding:24px!important}.heroPortrait .portraitFrame{width:min(70%,260px)!important}}
