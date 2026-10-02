@@ -482,3 +482,22 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 @media(max-width:1200px) and (min-width:701px){
  .heroAside .asideStatement>strong{font-size:clamp(34px,4vw,52px)!important}
 }
+
+
+/* Simplified hero statement: no decorative header/index, prevent clipping */
+.heroAside{padding:42px!important;justify-content:center!important;gap:34px!important}
+.heroAsideCore{display:block!important;width:100%!important}
+.heroAside .asideStatement{width:100%!important;overflow:visible!important}
+.heroAside .asideStatement>strong{
+ font-size:clamp(38px,3.55vw,58px)!important;
+ line-height:.94!important;
+ letter-spacing:-.05em!important;
+ white-space:normal!important;
+ overflow-wrap:normal!important;
+ word-break:normal!important;
+}
+.heroAsideBottom{margin-top:0!important}
+@media(max-width:1200px) and (min-width:701px){
+ .heroAside{padding:32px!important}
+ .heroAside .asideStatement>strong{font-size:clamp(34px,3.45vw,50px)!important}
+}
