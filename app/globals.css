@@ -337,3 +337,25 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
  #projects .projectMeta,#projects .projectType,#projects .tags span,#projects .projectHighlights span{font-size:9px!important}
  #projects .repoLink small,#projects .storeBadge small,#projects .architecture small,#projects .archTitle,#projects .pipeline strong,#projects .miniCopy span,#projects .miniNav span,#projects .sidePanelTabs button{font-size:8px!important}
 }
+
+
+/* EksperSiz preview: slightly larger content and smoother hierarchy */
+#projects .miniShowcase{grid-template-columns:minmax(175px,.72fr) minmax(265px,1.28fr);gap:22px}
+#projects .miniCopy span{font-size:9px!important;letter-spacing:.15em}
+#projects .miniCopy h4{font-size:25px;line-height:1.08}
+#projects .miniCopy p{font-size:12px!important;line-height:1.58!important}
+#projects .miniDevice{height:420px}
+#projects .miniNav span{font-size:9px!important}
+#projects .miniNav button{width:34px;height:34px;font-size:14px}
+#projects .sidePanelTabs button{font-size:9px!important;letter-spacing:.14em}
+#projects .miniDevice img{will-change:transform,opacity}
+@media(max-width:1000px){
+ #projects .miniDevice{height:390px}
+ #projects .miniCopy h4{font-size:24px}
+}
+@media(max-width:700px){
+ #projects .miniShowcase{grid-template-columns:1fr}
+ #projects .miniDevice{height:360px}
+ #projects .miniCopy h4{font-size:22px}
+ #projects .miniCopy p{font-size:11px!important}
+}
