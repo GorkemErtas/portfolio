@@ -391,3 +391,21 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 #projects .sidePanelTabs button:not(.active){color:#858e99!important}
 #projects .tags span{color:#b9c1ca!important}
 #projects .projectHighlights span{color:#aeb7c1!important}
+
+
+/* Keep both EksperSiz tabs visually balanced at the bottom */
+#projects .sidePanelBody{min-height:520px}
+#projects .miniShowcase,
+#projects .embeddedArchitecture{height:520px;min-height:520px;box-sizing:border-box}
+#projects .miniShowcase{grid-template-rows:minmax(0,1fr) 48px;padding-bottom:16px}
+#projects .miniNav{min-height:48px;align-self:end}
+#projects .embeddedArchitecture{justify-content:flex-start;padding:28px!important}
+#projects .embeddedArchitecture .pipeline{margin-top:auto;padding-top:18px;padding-bottom:10px}
+@media(max-width:1000px){
+ #projects .sidePanelBody{min-height:490px}
+ #projects .miniShowcase,#projects .embeddedArchitecture{height:490px;min-height:490px}
+}
+@media(max-width:700px){
+ #projects .sidePanelBody{min-height:540px}
+ #projects .miniShowcase,#projects .embeddedArchitecture{height:auto;min-height:540px}
+}
