@@ -34,7 +34,9 @@ const eksperSlides = [
 function EksperProjectPanel(){
  const [page,setPage]=useState<"preview"|"system">("preview");
  const [active,setActive]=useState(0);
+ const [direction,setDirection]=useState(1);
  const slide=eksperSlides[active];
+ const changeSlide=(step:number)=>{setDirection(step);setActive(v=>(v+step+eksperSlides.length)%eksperSlides.length)};
  return <div className="projectSidePanel">
   <div className="sidePanelTabs">
    <button className={page==="preview"?"active":""} onClick={()=>setPage("preview")}>APP PREVIEW</button>
@@ -43,8 +45,8 @@ function EksperProjectPanel(){
   <div className="sidePanelBody">
    {page==="preview" ? <motion.div className="miniShowcase" key="preview" initial={{opacity:0,x:12}} animate={{opacity:1,x:0}} transition={{duration:.25}}>
     <div className="miniCopy"><span>{slide.eyebrow}</span><h4>{slide.title}</h4><p>{slide.text}</p></div>
-    <div className="miniDevice"><motion.img key={slide.image} src={slide.image} alt={slide.title} initial={{opacity:0}} animate={{opacity:1}} transition={{duration:.25}}/></div>
-    <div className="miniNav"><button onClick={()=>setActive(v=>(v-1+eksperSlides.length)%eksperSlides.length)} aria-label="Previous screenshot">←</button><span>{String(active+1).padStart(2,"0")} / {String(eksperSlides.length).padStart(2,"0")}</span><button onClick={()=>setActive(v=>(v+1)%eksperSlides.length)} aria-label="Next screenshot">→</button></div>
+    <div className="miniDevice"><motion.img key={slide.image} src={slide.image} alt={slide.title} initial={{opacity:0,x:direction*42,scale:.985}} animate={{opacity:1,x:0,scale:1}} transition={{duration:.38,ease:[.22,.7,.2,1]}}/></div>
+    <div className="miniNav"><button onClick={()=>changeSlide(-1)} aria-label="Previous screenshot">←</button><span>{String(active+1).padStart(2,"0")} / {String(eksperSlides.length).padStart(2,"0")}</span><button onClick={()=>changeSlide(1)} aria-label="Next screenshot">→</button></div>
    </motion.div> :
    <motion.div className="architecture embeddedArchitecture" key="system" initial={{opacity:0,x:12}} animate={{opacity:1,x:0}} transition={{duration:.25}}>
     <div className="archTitle">PRODUCTION ARCHITECTURE</div><div className="archRow"><div><Smartphone/>Flutter<small>Android App</small></div><b>→</b><div><Server/>Spring Boot<small>REST API · Security · Business Logic</small></div><b>→</b><div><Database/>PostgreSQL<small>Application Data</small></div></div><div className="archServices"><div><BrainCircuit/>FastAPI + YOLO<small>Computer Vision</small></div><div><Code2/>Gemini<small>Inspection Reports</small></div><div><Code2/>External Services<small>Maps · FCM · Billing · Email</small></div></div><div className="pipeline"><strong>AI PIPELINE</strong><span>Photo → Validation → Vehicle → Damage → Part → Matching → ML Result → Gemini Report</span></div>
