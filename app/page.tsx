@@ -2,7 +2,7 @@
 
 import { ArrowDown, ArrowUpRight, Github, Linkedin, Mail, Server, BrainCircuit, PanelsTopLeft, Database, Smartphone, Code2 } from "lucide-react";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const techGroups = [
   { title:"Backend", items:["Java","Spring Boot","Node.js","FastAPI","REST APIs"] },
@@ -55,7 +55,13 @@ function EksperProjectPanel(){
 
 export default function Home(){
  const t=copy.en; const anchors=["#about","#projects","#stack","#experience","#contact"];
- return <main className="shell">
+ useEffect(()=>{
+  const root=document.documentElement;
+  const move=(e:PointerEvent)=>{root.style.setProperty("--mouse-x",e.clientX+"px");root.style.setProperty("--mouse-y",e.clientY+"px")};
+  window.addEventListener("pointermove",move,{passive:true});
+  return()=>window.removeEventListener("pointermove",move);
+ },[]);
+ return <main className="shell"><div className="cursorGlow" aria-hidden="true"/>
   <div className="ambient"/>
   <nav className="nav"><a className="mark" href="#top">GE<span>.</span></a><div className="navLinks">{t.nav.map((x,i)=><a href={anchors[i]} key={x}>{x}</a>)}</div></nav>
   <section id="top" className="hero">
