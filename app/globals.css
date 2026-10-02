@@ -501,3 +501,38 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
  .heroAside{padding:32px!important}
  .heroAside .asideStatement>strong{font-size:clamp(34px,3.45vw,50px)!important}
 }
+
+
+/* Hero statement panel: balanced fit inside its frame */
+.heroAside{
+ padding:34px 38px!important;
+ justify-content:center!important;
+ gap:28px!important;
+}
+.heroAsideCore{
+ flex:0 0 auto!important;
+ display:flex!important;
+ align-items:center!important;
+ justify-content:center!important;
+}
+.heroAside .asideStatement{
+ width:100%!important;
+ max-width:100%!important;
+}
+.heroAside .asideStatement>strong{
+ font-size:clamp(36px,3.25vw,54px)!important;
+ line-height:.92!important;
+ letter-spacing:-.052em!important;
+}
+.heroAsideBottom{
+ width:100%!important;
+ margin:0!important;
+ justify-content:flex-start!important;
+ gap:8px!important;
+}
+@media(min-width:1201px){
+ .heroAside .asideStatement>strong{font-size:clamp(40px,3.45vw,57px)!important}
+}
+@media(max-width:1000px){
+ .heroAside{padding:30px!important;gap:24px!important}
+}
