@@ -301,3 +301,25 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 .projectMeta>i{width:3px;height:3px;border-radius:50%;background:#5d6872;box-shadow:0 0 8px rgba(103,232,249,.22);flex:0 0 auto}
 .projectMeta>time{color:#a78bfa;border:1px solid rgba(167,139,250,.22);background:rgba(167,139,250,.045);padding:5px 8px;letter-spacing:.09em}
 @media(max-width:700px){.projectMeta{gap:8px;font-size:8px}.projectMeta>time{padding:4px 7px}}
+
+
+/* Fix project metadata typography: restore compact mono label styling */
+.projectMeta{
+ display:flex!important;
+ align-items:center!important;
+ flex-wrap:wrap!important;
+ column-gap:10px!important;
+ row-gap:8px!important;
+ margin:0 0 2px!important;
+ font-family:'DM Mono',monospace!important;
+ font-size:9px!important;
+ font-weight:400!important;
+ line-height:1.35!important;
+ letter-spacing:.12em!important;
+ text-transform:uppercase!important;
+ color:var(--accent)!important;
+}
+.projectMeta>span{display:inline-block!important;color:var(--accent)!important;font:inherit!important;letter-spacing:inherit!important}
+.projectMeta>i{display:block!important;width:4px!important;height:4px!important;margin:0 2px!important;border-radius:50%!important;background:rgba(103,232,249,.52)!important;box-shadow:0 0 7px rgba(103,232,249,.22)!important}
+.projectMeta>time{display:inline-block!important;font:inherit!important;color:#a78bfa!important;letter-spacing:.09em!important;line-height:1!important;padding:5px 8px!important;border:1px solid rgba(167,139,250,.22)!important;background:rgba(167,139,250,.045)!important}
+@media(max-width:700px){.projectMeta{font-size:8px!important;column-gap:8px!important}.projectMeta>time{padding:4px 6px!important}}
