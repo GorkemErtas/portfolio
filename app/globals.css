@@ -409,3 +409,41 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
  #projects .sidePanelBody{min-height:540px}
  #projects .miniShowcase,#projects .embeddedArchitecture{height:auto;min-height:540px}
 }
+
+
+/* Unified project system architecture */
+#projects .architecture{gap:0}
+#projects .archTitle{font-size:9.5px!important;letter-spacing:.16em!important;color:#9aa4af!important;margin-bottom:22px}
+#projects .archFlow{display:grid;grid-template-columns:minmax(0,1fr) 30px minmax(0,1.35fr) 30px minmax(0,1fr);align-items:stretch;gap:8px}
+#projects .archFlow>b{display:flex;align-items:center;justify-content:center;color:#626d77;font:16px 'DM Mono';font-weight:400}
+#projects .archNode{min-width:0;min-height:116px;border:1px solid var(--line);background:rgba(255,255,255,.008);padding:18px 16px;display:flex;flex-direction:column;justify-content:center;gap:12px;transition:border-color .25s ease,background .25s ease,transform .25s ease}
+#projects .archNode:hover{border-color:rgba(103,232,249,.25);background:rgba(103,232,249,.018);transform:translateY(-2px)}
+#projects .archNodePrimary{border-color:rgba(103,232,249,.19);background:rgba(103,232,249,.018)}
+#projects .archNode>svg{color:var(--accent);width:25px;height:25px;flex:0 0 auto}
+#projects .archNode>span{display:flex;min-width:0;flex-direction:column;gap:7px}
+#projects .archNode strong{font:600 11px 'DM Mono';line-height:1.35;color:#d9dee4}
+#projects .archNode small{font:9.5px 'DM Mono'!important;line-height:1.45!important;color:#929ca7!important}
+#projects .archConnector{height:56px;position:relative;display:flex;align-items:center;justify-content:center}
+#projects .archConnector:before{content:"";position:absolute;top:0;bottom:19px;left:50%;width:1px;background:var(--line)}
+#projects .archConnector:after{content:"";position:absolute;bottom:19px;left:16.66%;right:16.66%;height:1px;background:var(--line)}
+#projects .archConnector span{position:relative;z-index:1;margin-top:21px;padding:4px 10px;background:#0a0d11;color:#74808b;font:8px 'DM Mono';letter-spacing:.13em}
+#projects .archServiceGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+#projects .archServiceGrid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+#projects .archServiceGrid .archNode{min-height:105px}
+#projects .pipeline{margin-top:auto!important;border-top:1px solid var(--line);padding:18px 0 4px!important;display:flex!important;flex-direction:column;gap:9px}
+#projects .pipeline strong{font-size:9.5px!important;letter-spacing:.14em;color:var(--accent)}
+#projects .pipeline span{font-size:10px!important;line-height:1.55!important;color:#9ca6b0!important}
+#projects .projectSecondary .architecture{justify-content:flex-start;padding:28px 24px}
+#projects .projectSecondary .archConnector{margin-top:2px}
+@media(max-width:1000px){
+ #projects .archFlow{grid-template-columns:1fr 24px 1.25fr 24px 1fr;gap:5px}
+ #projects .archNode{padding:15px 13px}
+ #projects .archNode strong{font-size:10.5px}
+}
+@media(max-width:700px){
+ #projects .archFlow{grid-template-columns:1fr}
+ #projects .archFlow>b{height:18px;transform:rotate(90deg)}
+ #projects .archServiceGrid,#projects .archServiceGrid.two{grid-template-columns:1fr}
+ #projects .archConnector{height:44px}
+ #projects .archConnector:after{display:none}
+}
