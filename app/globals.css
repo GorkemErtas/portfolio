@@ -288,3 +288,8 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 @media(prefers-reduced-motion:reduce){
  .revealOnView,.revealOnView.isVisible{opacity:1!important;transform:none!important;transition:none!important}
 }
+
+
+/* Reveal stability: content animates once and stays crisp/visible */
+.contactSection,.contactSection>div{opacity:1!important;transform:none!important;filter:none!important}
+.revealOnView.isVisible{will-change:auto}
