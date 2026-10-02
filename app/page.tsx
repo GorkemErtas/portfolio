@@ -36,6 +36,9 @@ function EksperProjectPanel(){
  const [active,setActive]=useState(0);
  const [direction,setDirection]=useState(1);
  const slide=eksperSlides[active];
+ useEffect(()=>{
+  eksperSlides.forEach(({image})=>{const img=new Image();img.decoding="async";img.src=image;});
+ },[]);
  const changeSlide=(step:number)=>{setDirection(step);setActive(v=>(v+step+eksperSlides.length)%eksperSlides.length)};
  return <div className="projectSidePanel">
   <div className="sidePanelTabs">
@@ -45,7 +48,7 @@ function EksperProjectPanel(){
   <div className="sidePanelBody">
    {page==="preview" ? <motion.div className="miniShowcase" key="preview" initial={{opacity:0,x:12}} animate={{opacity:1,x:0}} transition={{duration:.25}}>
     <div className="miniCopy"><span>{slide.eyebrow}</span><h4>{slide.title}</h4><p>{slide.text}</p></div>
-    <div className="miniDevice"><motion.img key={slide.image} src={slide.image} alt={slide.title} initial={{opacity:0,x:direction*42,scale:.985}} animate={{opacity:1,x:0,scale:1}} transition={{duration:.38,ease:[.22,.7,.2,1]}}/></div>
+    <div className="miniDevice"><motion.img key={slide.image} src={slide.image} alt={slide.title} decoding="async" initial={{opacity:0,x:direction*42,scale:.985}} animate={{opacity:1,x:0,scale:1}} transition={{duration:.38,ease:[.22,.7,.2,1]}}/></div>
     <div className="miniNav"><button onClick={()=>changeSlide(-1)} aria-label="Previous screenshot">←</button><span>{String(active+1).padStart(2,"0")} / {String(eksperSlides.length).padStart(2,"0")}</span><button onClick={()=>changeSlide(1)} aria-label="Next screenshot">→</button></div>
    </motion.div> :
    <motion.div className="architecture embeddedArchitecture" key="system" initial={{opacity:0,x:12}} animate={{opacity:1,x:0}} transition={{duration:.25}}>
