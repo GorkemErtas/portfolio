@@ -232,3 +232,37 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 .embeddedArchitecture{height:500px}
 @media(max-width:1000px){.sidePanelBody{min-height:470px}.miniShowcase,.embeddedArchitecture{height:470px}.miniDevice{height:375px}}
 @media(max-width:700px){.sidePanelBody{min-height:520px}.miniShowcase{min-height:520px;height:auto;grid-template-rows:auto 350px 40px}.miniDevice{height:350px}.embeddedArchitecture{min-height:520px;height:auto}}
+
+
+/* Modern interaction layer */
+:root{--mouse-x:50vw;--mouse-y:35vh}
+.cursorGlow{position:fixed;z-index:0;left:0;top:0;width:520px;height:520px;pointer-events:none;border-radius:50%;transform:translate(calc(var(--mouse-x) - 50%),calc(var(--mouse-y) - 50%));background:radial-gradient(circle,rgba(103,232,249,.085) 0%,rgba(139,92,246,.045) 34%,transparent 70%);filter:blur(10px);transition:opacity .25s;will-change:transform}
+.shell>nav,.shell>section,.shell>footer{position:relative;z-index:1}
+
+/* Buttons and cards get a restrained luminous hover */
+.primary,.secondary,.repoLink,.contactLinks a,.miniNav button,.sidePanelTabs button{position:relative;overflow:hidden}
+.primary::before,.secondary::before,.repoLink::before,.contactLinks a::before{content:"";position:absolute;inset:-2px;pointer-events:none;background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.13) 48%,transparent 72%);transform:translateX(-125%);transition:transform .55s ease}
+.primary:hover::before,.secondary:hover::before,.repoLink:hover::before,.contactLinks a:hover::before{transform:translateX(125%)}
+.primary:hover,.repoLink:hover{box-shadow:0 0 0 1px rgba(103,232,249,.14),0 10px 34px rgba(103,232,249,.10)}
+.secondary:hover,.contactLinks a:hover{box-shadow:0 10px 34px rgba(139,92,246,.08)}
+.focusCard,.projectCard,.stackGroup,.timelineItem{transition:transform .32s ease,border-color .32s ease,background-color .32s ease,box-shadow .32s ease}
+.focusCard:hover,.stackGroup:hover{transform:translateY(-4px);border-color:rgba(103,232,249,.26);box-shadow:0 18px 48px rgba(0,0,0,.18)}
+.projectCard:hover{border-color:rgba(103,232,249,.18);box-shadow:0 22px 70px rgba(0,0,0,.20)}
+
+/* Scroll-driven entrance animations, progressively enhanced */
+@supports (animation-timeline:view()){
+ .sectionLabel,.sectionHead,.aboutGrid,.projectCard,.stackGrid,.stackNote,.timelineItem,.contactSection>div{
+  animation:revealUp both linear;
+  animation-timeline:view();
+  animation-range:entry 5% cover 28%;
+ }
+ .projectSecondary{animation-range:entry 3% cover 24%}
+}
+@keyframes revealUp{from{opacity:0;transform:translateY(28px);filter:blur(4px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+
+@media(pointer:coarse),(prefers-reduced-motion:reduce){
+ .cursorGlow{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
