@@ -447,3 +447,20 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
  #projects .archConnector{height:44px}
  #projects .archConnector:after{display:none}
 }
+
+
+/* Hero engineering statement panel */
+.heroAside{position:relative;overflow:hidden;display:flex!important;flex-direction:column!important;justify-content:space-between!important;padding:34px!important;background:linear-gradient(145deg,rgba(103,232,249,.035),transparent 42%),linear-gradient(320deg,rgba(139,92,246,.035),transparent 48%),#090c10!important}
+.heroAside:before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(to bottom,black,transparent 90%)}
+.heroAsideTop,.heroAsideCore,.heroAsideBottom{position:relative;z-index:1}
+.heroAsideTop{display:flex;align-items:center;gap:14px;font:8px 'DM Mono';letter-spacing:.16em;color:#77818c}
+.heroAsideTop i{height:1px;flex:1;background:linear-gradient(90deg,var(--line),transparent)}
+.heroAsideCore{display:grid;grid-template-columns:42px 1fr;gap:20px;align-items:start}
+.asideIndex{font:9px 'DM Mono';color:var(--accent);padding-top:8px}
+.asideStatement{display:flex;flex-direction:column}
+.asideStatement strong{font:700 clamp(38px,4.4vw,68px)/.9 Arial,sans-serif;letter-spacing:-.055em;color:#3f464e}
+.asideStatement strong:nth-child(2){color:#8c949d}
+.asideStatement .accentWord{color:#eef2f5}
+.heroAsideBottom{display:flex;gap:8px;flex-wrap:wrap}
+.heroAsideBottom span{border:1px solid rgba(103,232,249,.18);background:rgba(103,232,249,.025);padding:7px 10px;font:8px 'DM Mono';letter-spacing:.12em;color:var(--accent)}
+@media(max-width:1000px){.heroAside{padding:28px!important}.asideStatement strong{font-size:clamp(36px,8vw,58px)}}
