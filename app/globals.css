@@ -464,3 +464,21 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 .heroAsideBottom{display:flex;gap:8px;flex-wrap:wrap}
 .heroAsideBottom span{border:1px solid rgba(103,232,249,.18);background:rgba(103,232,249,.025);padding:7px 10px;font:8px 'DM Mono';letter-spacing:.12em;color:var(--accent)}
 @media(max-width:1000px){.heroAside{padding:28px!important}.asideStatement strong{font-size:clamp(36px,8vw,58px)}}
+
+
+/* Hero panel corrective layout: override legacy heroAside span rules */
+.heroAside{min-height:400px!important}
+.heroAsideTop{width:100%;display:flex!important;align-items:center!important}
+.heroAsideTop>span{display:inline!important;font:8px 'DM Mono'!important;line-height:1!important;letter-spacing:.16em!important;color:#77818c!important}
+.heroAsideCore{width:100%;display:grid!important;grid-template-columns:34px minmax(0,1fr)!important;gap:16px!important;align-items:start!important}
+.heroAside .asideIndex{display:block!important;font:9px 'DM Mono'!important;line-height:1!important;letter-spacing:.08em!important;color:var(--accent)!important;padding-top:7px!important}
+.heroAside .asideStatement{display:flex!important;flex-direction:column!important;gap:0!important;min-width:0}
+.heroAside .asideStatement>strong{display:block!important;width:auto!important;font-family:Arial,sans-serif!important;font-size:clamp(42px,4.25vw,66px)!important;font-weight:700!important;line-height:.9!important;letter-spacing:-.055em!important;white-space:nowrap!important}
+.heroAside .asideStatement>strong:nth-child(1){color:#424a53!important}
+.heroAside .asideStatement>strong:nth-child(2){color:#8b949e!important}
+.heroAside .asideStatement>.accentWord{color:#f1f4f6!important}
+.heroAsideBottom{width:100%;display:flex!important;align-items:center!important;gap:8px!important}
+.heroAsideBottom>span{display:inline-flex!important;width:auto!important;align-items:center!important;font:8px 'DM Mono'!important;line-height:1!important;letter-spacing:.12em!important;color:var(--accent)!important;padding:8px 10px!important}
+@media(max-width:1200px) and (min-width:701px){
+ .heroAside .asideStatement>strong{font-size:clamp(34px,4vw,52px)!important}
+}
