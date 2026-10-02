@@ -323,3 +323,17 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
 .projectMeta>i{display:block!important;width:4px!important;height:4px!important;margin:0 2px!important;border-radius:50%!important;background:rgba(103,232,249,.52)!important;box-shadow:0 0 7px rgba(103,232,249,.22)!important}
 .projectMeta>time{display:inline-block!important;font:inherit!important;color:#a78bfa!important;letter-spacing:.09em!important;line-height:1!important;padding:5px 8px!important;border:1px solid rgba(167,139,250,.22)!important;background:rgba(167,139,250,.045)!important}
 @media(max-width:700px){.projectMeta{font-size:8px!important;column-gap:8px!important}.projectMeta>time{padding:4px 6px!important}}
+
+
+/* Projects: slightly increase the smallest supporting text consistently */
+#projects .projectMeta{font-size:9.5px!important}
+#projects .projectType{font-size:9.5px!important}
+#projects .tags span{font-size:9.5px!important}
+#projects .projectHighlights span{font-size:9.5px!important}
+#projects .repoLink small,#projects .storeBadge small{font-size:8.5px!important}
+#projects .architecture small,#projects .archTitle,#projects .pipeline strong{font-size:8.5px!important}
+#projects .miniCopy span,#projects .miniNav span,#projects .sidePanelTabs button{font-size:8.5px!important}
+@media(max-width:700px){
+ #projects .projectMeta,#projects .projectType,#projects .tags span,#projects .projectHighlights span{font-size:9px!important}
+ #projects .repoLink small,#projects .storeBadge small,#projects .architecture small,#projects .archTitle,#projects .pipeline strong,#projects .miniCopy span,#projects .miniNav span,#projects .sidePanelTabs button{font-size:8px!important}
+}
