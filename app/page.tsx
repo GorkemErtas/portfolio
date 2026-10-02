@@ -60,10 +60,10 @@ export default function Home(){
   const move=(e:PointerEvent)=>{root.style.setProperty("--mouse-x",e.clientX+"px");root.style.setProperty("--mouse-y",e.clientY+"px")};
   window.addEventListener("pointermove",move,{passive:true});
 
-  const targets=Array.from(document.querySelectorAll(".sectionLabel,.sectionHead,.aboutGrid,.projectCard,.stackGrid,.stackNote,.timelineItem,.contactSection>div"));
+  const targets=Array.from(document.querySelectorAll(".sectionLabel,.sectionHead,.aboutGrid,.projectCard,.stackGrid,.stackNote,.timelineItem"));
   targets.forEach((el,i)=>{el.classList.add("revealOnView");(el as HTMLElement).style.setProperty("--reveal-delay",String((i%3)*55)+"ms")});
   const observer=new IntersectionObserver(entries=>{
-   entries.forEach(entry=>entry.target.classList.toggle("isVisible",entry.isIntersecting));
+   entries.forEach(entry=>{if(entry.isIntersecting) entry.target.classList.add("isVisible")});
   },{rootMargin:"-7% 0px -7% 0px",threshold:.08});
   targets.forEach(el=>observer.observe(el));
 
