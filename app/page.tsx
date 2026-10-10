@@ -49,9 +49,9 @@ function EksperProjectPanel({ language }: { language: Language }){
 }
 
 export default function Home(){
- const [language,setLanguage]=useState<Language>("tr"); const t=copy[language];
- useEffect(()=>{try{if(window.localStorage.getItem("portfolio-language")==="en")setLanguage("en");}catch{/* Storage may be unavailable; Turkish remains the default. */}},[]);
- useEffect(()=>{document.documentElement.lang=language;document.title=t.metaTitle;const description=document.querySelector('meta[name="description"]');if(description)description.setAttribute("content",t.metaDescription);try{window.localStorage.setItem("portfolio-language",language);}catch{/* Language switching still works without storage. */}},[language,t.metaTitle,t.metaDescription]); const techGroups=details[language].techGroups.map((title,i)=>({title,items:details[language].techItems[i]})); const focusCards=details[language].focusCards.map((item,i)=>({...item,icon:[Server,BrainCircuit,PanelsTopLeft][i]})); const anchors=["#about","#projects","#stack","#experience","#contact"];
+ const [language,setLanguage]=useState<Language>("tr"); const [languageReady,setLanguageReady]=useState(false); const t=copy[language];
+ useEffect(()=>{try{setLanguage(window.localStorage.getItem("portfolio-language")==="en"?"en":"tr");}catch{/* Storage may be unavailable; Turkish remains the default. */}finally{setLanguageReady(true);}},[]);
+ useEffect(()=>{if(!languageReady)return;document.documentElement.lang=language;document.title=t.metaTitle;const description=document.querySelector('meta[name="description"]');if(description)description.setAttribute("content",t.metaDescription);try{window.localStorage.setItem("portfolio-language",language);}catch{/* Language switching still works without storage. */}},[language,languageReady,t.metaTitle,t.metaDescription]); const techGroups=details[language].techGroups.map((title,i)=>({title,items:details[language].techItems[i]})); const focusCards=details[language].focusCards.map((item,i)=>({...item,icon:[Server,BrainCircuit,PanelsTopLeft][i]})); const anchors=["#about","#projects","#stack","#experience","#contact"];
  useEffect(()=>{
   const root=document.documentElement;
   const move=(e:PointerEvent)=>{root.style.setProperty("--mouse-x",e.clientX+"px");root.style.setProperty("--mouse-y",e.clientY+"px")};
