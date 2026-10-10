@@ -3,13 +3,13 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Görkem Ertaş | Software Engineer",
-  description: "Software Engineer focused on AI/ML, backend engineering and full-stack product development.",
+  title: "Görkem Ertaş | Yazılım Mühendisi",
+  description: "Yapay zekâ, backend mühendisliği ve full-stack ürün geliştirmeye odaklanan yazılım mühendisi.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="tr">
       <body>
         {children}
         <Analytics />
